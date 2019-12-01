@@ -1,0 +1,44 @@
+@import "./variable.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $EMPTY_BACKGROUND_COLOR;
+  font-family: $FONT_FAMILY;
+  color: black;
+}
+
+.data-table-container{
+    margin: 30px;
+    min-height: 100px;
+}
+
+.add-button-container{
+    margin: 16px;
+    float: right;
+}
+
+.add-button{
+    font-weight: bold !important;
+}
+
+.select-box-container{
+    margin-top: 5px !important;
+    margin-bottom: 4px !important;
+    width: 100%;
+}
+
+.date-selector-container{
+    margin-top: 5px !important;
+    margin-bottom: 8px !important;
+    width: 100%;
+}
+
+.invalid-message{
+    text-align: center;
+    color: red;
+}
+
+.rdt_TableCell{
+    font-size: 16px !important;
+}
