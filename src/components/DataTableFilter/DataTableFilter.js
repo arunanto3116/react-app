@@ -4,9 +4,6 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
 
 class DataTableFilter extends Component {
-    constructor(props) {
-        super(props);
-    }
     render(){
         return (
             <>
