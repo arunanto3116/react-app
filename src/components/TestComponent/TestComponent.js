@@ -1,22 +1,19 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 
-export class TestComponent extends React.Component {
+export const TestComponent = props => { 
+    const [status, setStatus] = useState({name:"kiran", place: "chevoor"});
+    console.log(status);
 
-    render(){
-        console.log(this.props)
-        if(this.props.showDetails){
-            console.log("sdsd")
+    useEffect(()=> {
+        console.log("rendered")
+        return () => {
+            console.log("unmount")
         }
-        return(
-            <>
-            <div>
-                Hello {this.props.name} place : {this.props.place} {this.props.showDetails ? "details" : ""}
-            </div>
-            <TestComponent1 {...this.props}/>
-            </>
-        )
-    }
+    },[status])
 
+    console.log("props 1", props)
+
+    return <>From funtional component <button onClick={() => setStatus({name: "shebin", ...status})}>Change</button></>
 }
 
 TestComponent.defaultProps = {
@@ -24,12 +21,13 @@ TestComponent.defaultProps = {
 }
 
 export class TestComponent1 extends React.Component {
-
+    
     render(){
+        console.log("props 2", this.props)
         return(
-            <React.Fragment>
+            <div className={this.props.className}>
                 component 2 {this.props.time} {this.props.title}
-            </React.Fragment>
+            </div>
         )
     }
 
